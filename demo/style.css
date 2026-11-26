@@ -1,0 +1,232 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f5f9;
+    color: #263238;
+}
+
+header {
+    background: #1e293b;
+    color: white;
+    padding: 28px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.panel {
+    background: white;
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.panel h2 {
+    margin-bottom: 18px;
+}
+
+.shift-controls,
+.add-task-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+select,
+input {
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.add-task-form input {
+    flex: 1;
+    min-width: 220px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.danger {
+    background: #dc2626;
+}
+
+.btn-success {
+    background: #16a34a;
+}
+
+.shift-status {
+    margin-top: 18px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.status-message {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background: #eff6ff;
+    color: #1e40af;
+    font-size: 14px;
+}
+
+.status-message:empty {
+    display: none;
+}
+
+.queue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.queue-header h2 {
+    margin-bottom: 6px;
+}
+
+.queue-header .hint {
+    margin-bottom: 0;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    font-size: 15px;
+    color: #64748b;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 12px;
+    color: #2563eb;
+}
+
+.hint {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th,
+td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background: #f1f5f9;
+}
+
+tr:hover {
+    background: #f8fafc;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-progress {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.empty {
+    text-align: center;
+    color: #94a3b8;
+    padding: 25px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #94a3b8;
+}
+
+@media (max-width: 700px) {
+    .summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        padding: 0 12px;
+    }
+
+    .panel {
+        padding: 16px;
+    }
+}

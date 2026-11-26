@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Shift Task Tracker</h1>
+        <p>ระบบจัดการงานระหว่างกะ</p>
+    </header>
+
+    <main>
+        <section class="panel">
+            <h2>เลือกกะการทำงาน</h2>
+
+            <div class="shift-controls">
+                <select id="shiftSelect" aria-label="เลือกกะการทำงาน">
+                    <option value="A">Shift A</option>
+                    <option value="B">Shift B</option>
+                    <option value="C">Shift C</option>
+                </select>
+
+                <button id="startShift" type="button">เริ่มกะ</button>
+                <button id="endShift" type="button" class="danger">จบกะ</button>
+            </div>
+
+            <p id="currentShift" class="shift-status">ยังไม่ได้เริ่มกะ</p>
+            <p id="statusMessage" class="status-message" aria-live="polite"></p>
+        </section>
+
+        <section class="summary">
+            <div class="card">
+                <h3>งานทั้งหมด</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="card">
+                <h3>กำลังดำเนินการ</h3>
+                <p id="progressTasks">0</p>
+            </div>
+
+            <div class="card">
+                <h3>รอรับช่วงต่อ (ส่วนกลาง)</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+            <div class="card">
+                <h3>เสร็จแล้ว</h3>
+                <p id="completedTasks">0</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>เพิ่มงานใหม่</h2>
+            <p class="hint">เพิ่มงานเข้ากะที่กำลังปฏิบัติงานอยู่ (ต้องกดเริ่มกะก่อน)</p>
+
+            <div class="add-task-form">
+                <input id="taskDetail" type="text" placeholder="ระบุรายละเอียดงาน...">
+                <button id="addTaskButton" type="button">เพิ่มงาน</button>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>รายการงาน</h2>
+            <p class="hint">งานที่ปิดไม่ทันในกะจะถูกส่งเข้า Central Queue โดยอัตโนมัติเมื่อกดจบกะ</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>รหัสงาน</th>
+                            <th>รายละเอียด</th>
+                            <th>ผู้รับผิดชอบ</th>
+                            <th>สถานะ</th>
+                            <th>จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="taskList"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="queue-header">
+                <div>
+                    <h2>Central Queue (ส่วนกลาง)</h2>
+                    <p class="hint">รายการงานที่รอพนักงานกะถัดไปรับช่วงต่อ</p>
+                </div>
+                <button id="claimAllButton" type="button" class="btn-success">รับงานทั้งหมด (0)</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>รหัสงาน</th>
+                            <th>รายละเอียด</th>
+                            <th>กะต้นทาง</th>
+                            <th>สถานะ</th>
+                            <th>การทำงาน</th>
+                        </tr>
+                    </thead>
+                    <tbody id="queueList"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Shift Task Tracker
+    </footer>
+</body>
+</html>
